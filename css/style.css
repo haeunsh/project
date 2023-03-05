@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap');
+@import url(reset.min.css);
+
+html {min-height:100%; height:100%; font-size:calc(100vw*10/1920);}
+body {height:100%; font-family:'Noto Sans KR', sans-serif;}
+.hidden {display:none;}
+
+.wrap {position:relative; display:flex; flex-wrap:wrap; justify-content:center; align-items:center; width:100%; height:100%; background-repeat:no-repeat; background-position:center; background-size:cover; overflow-y:scroll;}
+.wrap::after {content:''; display:block; position:fixed; left:0; right:0; top:0; bottom:0; background-color:rgba(0,0,0,0.6);}
+.section {width:100%; padding:0 2rem; z-index:10;}
+
+.geo_area {display:flex; justify-content:center;}
+#weather span {color:rgba(255,255,255,0.6); font-size:18px; font-style:normal; line-height:1.5;}
+
+.clock_area {width:100%;}
+#clock {color:#fff; font-size:200px; line-height:240px; text-align:center;}
+
+.login_area {width:100%; max-width:500px; margin:4rem auto 0;}
+.todo_area {width:100%; max-width:500px; margin:2rem auto 0;}
+.input_wrap {border-bottom:2px solid rgba(255,255,255,0.6);}
+input {width:100%; padding:0.8rem 0; background-color:transparent; color:#fff; font-size:24px; line-height:1.5; text-align:center; outline:none;}
+input::placeholder {color:rgba(255,255,255,0.6)}
+.login_area input {text-align:center;}
+#greeting {color:#fff; font-size:36px; line-height:1.5; text-align:center;}
+
+#todo-list {max-height:300px; margin:4rem 0; padding-right:1.2rem; overflow-y:scroll; counter-reset:number 0;}
+#todo-list::-webkit-scrollbar {width:1rem;}
+#todo-list::-webkit-scrollbar-thumb {border-radius:1rem; background-color:#fff;}
+#todo-list::-webkit-scrollbar-track {border-radius:1rem; background-color:rgba(255,255,255,0.4);}
+#todo-list li {display:flex; align-items:center; gap:0.4rem; counter-increment:number; color:#fff; font-size:20px; line-height:1.5;}
+#todo-list li::before {content:counter(number) ". "; align-self:flex-start; white-space:nowrap;}
+#todo-list li + li {margin-top:8px;}
+#todo-list li span {display:block; flex:auto; width:calc(100% - 3.6rem);}
+#todo-list li button {display:block; flex:auto; width:28px; height:28px; background:url(../img/icon_close.svg) no-repeat center / contain;}
+
+@media (max-width:768px){
+	html {font-size:10px}
+	#clock {font-size:12rem; line-height:20rem;}
+}
